@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
-    <script src = "JS.js"></script>
+    <!-- <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css"> -->
+    
 
     <title>LSO</title>
 </head>
@@ -15,13 +15,31 @@
         <nav>
             
                 <section class="nawigacja">
-                    <img src="bars.png" id="ikona">
-                    <div class="divNav">
-                            <ul class="pierwszyUL">
-                            <li><a href="#" class="child">Menu</a></li>
-                            <li class="pokaz"><a href="#" class="child">Ceremoniał</a>
+                    
+                        <div class="img-class"><img src="bars.png" id="ikona">
+                            <ul class="pierwszyULmobile">
+                                <li><a href="#" class="child">Menu</a></li>
+                                <li class="pokazMobile"><a class="child">Ceremoniał</a>    
+                                    <ul class="drugiULmobile">
+                                    <li><a href="#">Podstawy</a></li>
+                                    <li><a href="#">Dla lektorów</a></li>
+                                    <li><a href="#">Triduum</a></li>
+                                    </ul> 
                                 
-                                    <ul class="drugiUL">
+                                </li>
+                                <li><a href="#" class="child">Diecezja</a></li>
+                                <li><a href="#" class="child">Punkty i dyżur</a></li>
+                            </ul> 
+                        </div>
+                    
+
+
+                    <div class="divNav">
+                            <ul class="pierwszyULcomp">
+                            <li><a href="#" class="child">Menu</a></li>
+                            <li class="pokaz"><a class="child">Ceremoniał</a>
+                                
+                                    <ul class="drugiULcomp">
                                     <li><a href="#">Podstawy</a></li>
                                     <li><a href="#">Dla lektorów</a></li>
                                     <li><a href="#">Triduum</a></li>
@@ -69,6 +87,6 @@
     </main>
     </div>
 
-    
+    <script src = "JS.js"></script>
 </body>
 </html>
