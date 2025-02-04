@@ -2,9 +2,10 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 img{
-    src: URL("bars.png");
+    src: URL(bars.png);
 }
 .klocek{
     height: 400vh;
@@ -15,6 +16,9 @@ html{
 
 }
 /* nawigacja i obrazek*/
+.drugiULcomp, .pierwszyULcomp, .drugiULmobile, .pierwszyULmobile{
+    display: none;
+}
 .nawigacja{
     position: fixed;
     top: 0;
@@ -24,23 +28,84 @@ html{
     z-index: 10;
     
 }
+
+
+.img-class{
+    height: 60px;
+    width: 60px;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.pierwszyULmobile a{
+    text-decoration: none;
+    color: black
+}
+.img-class:hover .pierwszyULmobile {
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: gray;
+    height: 240px;
+    width: 40vw;
+    line-height: 60px;
+    border-bottom: 4px solid black;
+    border-right: 4px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    animation: slide 0.5s ease-out forwards;
+
+}
+.child{
+    text-decoration: none;
+    color: honeydew;
+    font-size: 20px;
+    transition: color 0.3s linear;
+    
+}
+
+.pokazMobile:hover .drugiULmobile{
+    list-style-type: none;
+    position: absolute;
+    left: 40vw;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    animation: slideRight 0.5s ease-out forwards;
+    background-color: gray;
+    height: 120px;
+    width: 30vw;
+    line-height: 40px;
+    border-bottom: 4px solid black;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
 .divNav{
+    position: relative;
     top: 0;
     position: sticky;
 }
-.drugiUL, .pierwszyUL{
-    display: none;
-}
+
+
+
 
 #ikona{
     display: inline-block;
     line-height: 60px;
     margin-top: 5px;
-    margin-left: 1vw;
-    padding: 0;
+    margin-left: 2vw;
     height: 50px;
     width: 50px;
-    color: honeydew;
+
+    cursor: pointer;
 }
 
 .headerZdjecie{
@@ -118,11 +183,12 @@ html{
 
 
 @media (min-width: 768px){
-    #ikona{
+    #ikona, .pierwszyULmobile, .drugiULmobile, .img-class{
         display: none;
     }
-
-    .pierwszyUL{
+    
+    .pierwszyULcomp{
+        font-weight: 500;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -130,13 +196,21 @@ html{
         align-items: center;
         justify-content: space-evenly;
         line-height: 60px;
+        
     }
-    .drugiUL{
+    .pierwszyULcomp a{
+        color: black;
+    }
+    .pierwszyULcomp a:hover{
+        color: honeydew;
+        cursor: pointer;
+    }
+    .drugiULcomp{
         position: absolute;
-        top: 60px; 
+        top: 60px;
         box-sizing: content-box;
         width: 110.3px;
-        background-color: gray;
+        background: linear-gradient(0deg, #c3c3c3, gray);
         border-left: 5px groove black;
         border-right: 5px groove black;
         border-bottom: 5px groove black;
@@ -144,42 +218,32 @@ html{
         text-align: center;
         line-height: 50px;
         z-index: 20;
-
-        transition:linear
         
     }
     
     .pokaz:hover ul {
         display: block;
         z-index: 5;
-        
+        opacity: 0;
+        visibility: visible;
+        animation: slide 0.5s ease-out forwards;
     }
-
-    .drugiUL li{
+    
+    .drugiULcomp li{
         height: 50px;
         
     }
-    .drugiUL a{
+    .drugiULcomp a{
         color: black;
+        font-weight: 500;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 1em;
         transition: color 0.3s linear;
     }
-    .drugiUL a:hover{
+    .drugiULcomp a:hover{
         color: honeydew;
     }
-
-    .child{
-        text-decoration: none;
-        color: honeydew;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 20px;
-        transition: color 0.3s linear;
-        
-    }
-    .child:hover{
-        color: black;
-    }
+    
     
     .zdjecie{
         width: 250px;
@@ -203,7 +267,7 @@ html{
         
     }
     .tekstZdjecie{
-        height: 60vh;
+        height: 45vh;
         font-size: 60px;
     }
     
@@ -222,6 +286,7 @@ html{
 
     .tekstZdjecie{
         font-size: 70px;
+        height: 60vh;
     }
 }
 
@@ -236,19 +301,19 @@ html{
     .tekstZdjecie{
         font-size: 80px;
     }
-    .nawigacja, .pierwszyUL {
+    .nawigacja, .pierwszyULcomp {
         height: 90px;   
         line-height: 90px;
     } 
-    .pierwszyUL a{
+    .pierwszyULcomp a{
         font-size: 27px;
     }
-    .drugiUL{
+    .drugiULcomp{
         box-sizing: content-box;
         width: 148.89px;
         top: 90px;
     }
-    .drugiUL > li{
+    .drugiULcomp > li{
         line-height: 70px;
         height: 70px; 
     }
@@ -256,4 +321,29 @@ html{
         margin-top: 90px;
     }
     
+}
+
+
+
+
+@keyframes slide {
+    from {
+      opacity: 0;
+      transform: translateY(-30%);
+      
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
