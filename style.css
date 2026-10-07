@@ -10,7 +10,12 @@
 a{
     scroll-margin-top: 70px;
 }
+footer{
+    background-color: gray;
+    height: 8%;
+    text-align: center;
 
+}
 .sunmoondiv{
     display: flex;
     justify-content: end;
